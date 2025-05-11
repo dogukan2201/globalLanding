@@ -113,6 +113,20 @@ const Footer = () => {
                   Reşadiye Mah. Hacıosmanoğlu Cad. No:2 Maçka/Trabzon
                 </span>
               </motion.li>
+              <motion.li
+                className="flex items-start group"
+                whileHover={{ x: 10 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <FaMapMarkerAlt className="h-5 w-5 mr-3 text-[#FAAA26] mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <span className="group-hover:text-[#FAAA26] transition-colors">
+                  Telefon Numaralarımız
+                  <br />
+                  0(462) 511 0 511 <br />
+                  0(532) 203 45 61 <br />
+                  0(532) 165 36 61 <br /> 0(535) 616 86 09
+                </span>
+              </motion.li>
             </ul>
           </motion.div>
         </motion.div>

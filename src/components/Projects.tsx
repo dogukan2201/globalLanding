@@ -49,7 +49,9 @@ const projects: Project[] = [
     category: "Yapı Projesi",
     imageUrl: "https://i.imgur.com/e81sKpr.jpeg",
     description:
-      "Muğla'da bir tatil tesisi için yaptığımız kapsamlı taş bahçe düzenlemesi ve peyzaj projesi.",
+      "Lüks villa projesi Global Grup İnşaat ekibi tarafından yaptırılmıştır.",
+    location: "Maçka, Trabzon, Türkiye",
+    completionDate: "2024",
   },
   {
     id: 5,
@@ -231,7 +233,7 @@ const Projects = () => {
           transition={{ delay: 0.3 }}
           className="flex flex-wrap justify-center gap-4 mb-12"
         >
-          {["all", "Taş Ev", "Taş Duvar", "Restorasyon", "Peyzaj"].map(
+          {["all", "Taş Ev", "Taş Duvar", "Yapı Projesi"].map(
             (category, index) => (
               <motion.button
                 key={category}

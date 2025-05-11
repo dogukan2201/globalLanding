@@ -6,6 +6,8 @@ interface Project {
   id: number;
   title: string;
   category: string;
+  location?: string;
+  completionDate?: string;
   imageUrl: string;
   description: string;
 }
@@ -13,57 +15,61 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Modern Taş Villa",
-    category: "Taş Ev",
-    imageUrl:
-      "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    title: "Dükkan Projesi",
+    category: "Yapı Projesi",
+    imageUrl: "https://i.imgur.com/h4qecaa.jpeg",
     description:
-      "Bodrum bölgesinde 250m² alana sahip, modern mimari ile taş işçiliğini birleştirdiğimiz lüks villa projesi.",
+      "Maçka Metin Usta Hamsiköy Sültacı firma dükkan projesi Global Grup İnşaat ekibi tarafından yaptırılmıştır.",
+    location: "Maçka, Trabzon, Türkiye",
+    completionDate: "2024",
   },
   {
     id: 2,
-    title: "Bahçe Duvarı Projesi",
+    title: "Taş Duvar Projesi",
     category: "Taş Duvar",
-    imageUrl:
-      "https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    imageUrl: "https://i.imgur.com/JJ5VSK8.jpeg",
     description:
-      "İzmir'de özel bir konut için inşa ettiğimiz 120 metre uzunluğundaki dekoratif bahçe duvarı.",
+      "Trabzon Maçka'da inşa ettiğimiz taş duvar projesi, doğal taşların ustaca kullanımıyla dikkat çekiyor.",
+    location: "Maçka, Trabzon, Türkiye",
+    completionDate: "2024",
   },
   {
     id: 3,
-    title: "Dağ Evi Restorasyonu",
-    category: "Restorasyon",
-    imageUrl:
-      "https://images.pexels.com/photos/209296/pexels-photo-209296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    title: "Taş Duvar Projesi",
+    category: "Taş Duvar",
+    imageUrl: "https://i.imgur.com/qqRfy1S.jpeg",
     description:
-      "Kapadokya'da 100 yıllık tarihi bir taş evin aslına uygun olarak restore edilmesi projesi.",
+      "Trabzon Maçka'da inşa ettiğimiz taş duvar projesi, sağlam yapısıyla dikkat çekiyor.",
+    location: "Maçka, Trabzon, Türkiye",
+    completionDate: "2024",
   },
   {
     id: 4,
-    title: "Taş Bahçe Düzenlemesi",
-    category: "Peyzaj",
-    imageUrl:
-      "https://images.pexels.com/photos/53184/peacock-bird-face-macro-53184.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    title: "Lüks Villa Projesi",
+    category: "Yapı Projesi",
+    imageUrl: "https://i.imgur.com/e81sKpr.jpeg",
     description:
       "Muğla'da bir tatil tesisi için yaptığımız kapsamlı taş bahçe düzenlemesi ve peyzaj projesi.",
   },
   {
     id: 5,
-    title: "Kır Evi Projesi",
+    title: "Taş Ev Projesi",
     category: "Taş Ev",
-    imageUrl:
-      "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    imageUrl: "https://i.imgur.com/OouSXw1.jpeg",
     description:
-      "Bolu'da inşa ettiğimiz 180m² büyüklüğünde doğayla iç içe bir taş kır evi projesi.",
+      "Trabzon Maçka'da inşa ettiğimiz taş ev projesi, yapımız düzenli ve estetik olmasıyla dikkat çekiyor .",
+    location: "Maçka, Trabzon, Türkiye",
+    completionDate: "2024",
   },
   {
     id: 6,
-    title: "İstinat Duvarı",
-    category: "Taş Duvar",
-    imageUrl:
-      "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    title: "Dükkan Projesi",
+    category: "Yapı Projesi",
+    imageUrl: "https://i.imgur.com/4UdNZXS.jpeg",
     description:
-      "Antalya'da eğimli bir arazide inşa ettiğimiz 200 metrelik istinat duvarı projesi.",
+      "Firma dükkan projesi Global Grup İnşaat ekibi tarafından yaptırılmıştır.",
+    location: "Maçka, Trabzon, Türkiye",
+    completionDate: "2024",
   },
 ];
 
@@ -154,19 +160,11 @@ const ProjectModal: React.FC<{
           >
             <div className="bg-gray-50 p-3 rounded">
               <span className="block text-sm text-gray-500">Konum</span>
-              <span className="font-medium">Muğla, Türkiye</span>
+              <span className="font-medium">{project.location}</span>
             </div>
             <div className="bg-gray-50 p-3 rounded">
               <span className="block text-sm text-gray-500">Tamamlanma</span>
-              <span className="font-medium">2022</span>
-            </div>
-            <div className="bg-gray-50 p-3 rounded">
-              <span className="block text-sm text-gray-500">Alan</span>
-              <span className="font-medium">250 m²</span>
-            </div>
-            <div className="bg-gray-50 p-3 rounded">
-              <span className="block text-sm text-gray-500">Süre</span>
-              <span className="font-medium">6 Ay</span>
+              <span className="font-medium">{project.completionDate}</span>
             </div>
           </motion.div>
           <motion.button
@@ -261,7 +259,7 @@ const Projects = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           <AnimatePresence mode="wait">
-            {filteredProjects.map((project, index) => (
+            {filteredProjects.map((project) => (
               <motion.div
                 key={project.id}
                 layout
